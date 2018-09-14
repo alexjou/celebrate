@@ -1,0 +1,45 @@
+<div class="thumbnail">
+    <%= image_tag @trip.picture.url(:large), class:"img-responsive" %>
+    
+    <div class="caption-full">
+        <h4 class="pull-right"><i>Entrada: </i><%= humanized_money_with_symbol @trip.price%></h4>
+        <h4><a href="#"><%= @trip.title %></a>
+        </h4>
+            <%= @trip.description.html_safe %>
+        </div>
+        
+        <br/>
+        <% if user_signed_in? %>
+            <h4>                
+                <input type="radio" value="2" />
+                <i> Eu Vou! </i>
+                <br/>
+                <%= submit_tag "Pegar Cupom", class: "btn btn-default" %>
+                    <br/>
+                    <p>O que você acha desse local?</p>
+                    
+                    <div class="col-lg-5">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="...">
+                            <span class="input-group-btn">
+                            <input type="submit" name="commit" value="Enviar" class="btn btn-default">
+                            </span>
+                        </div>
+                    </div>
+                <br/>                
+            </h4>
+            <br/> 
+            <label> <i class="glyphicon glyphicon-star"></i></label>
+                <label> <i class="glyphicon glyphicon-star"></i></label>
+                <label> <i class="glyphicon glyphicon-star"></i></label>
+                <label> <i class="glyphicon glyphicon-star"></i></label>
+                <label> <i class="glyphicon glyphicon-star"></i></label>
+        <% end %>
+        <% unless user_signed_in? %>
+            <button type="button" class="btn btn btn-circle" disabled="disabled">
+                <i class="fa fa-minus">Pegar Cupom</i>
+            </button>
+            <br/>
+            <i class="fa fa-minus">Precisa estar logado</i>
+        <% end %>
+</div>

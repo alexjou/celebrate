@@ -1,0 +1,2 @@
+module Backoffice::TripsHelper
+end

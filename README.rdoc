@@ -1,0 +1,19 @@
+== README
+
+Aqui ficará o código fonte do aplicativo "Equipe Fênix" desenvolvido por Álex Joubert
+
+## Dependências do Projeto
+
+* ImageMagick (https://www.imagemagick.org)
+
+```
+sudo apt-get update
+sudo apt-get install imagemagick
+```
+
+* Graphviz https://www.graphviz.org) - Apenas para ambiente de Desenvolvimento
+
+```
+sudo apt-get update
+sudo apt-get install graphviz
+```

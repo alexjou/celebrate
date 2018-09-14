@@ -1,0 +1,43 @@
+<h1 class="page-header"> Listando Locais </h1>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Imagem</th>
+      <th>Nome</th>
+      <th>Categoria</th>
+      <th>Entrada</th>
+      <th>Editar/Cupom</th>
+      <th>Avaliação</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @trips.each do |trip| %>
+    <tr>
+      <th scope="row"><%= trip.id %></th>
+      <td><%= image_tag trip.picture(:thumb) %></th>
+      <td><%= trip.title %></th>
+      <td><%= trip.category.description %></th>
+      <td><%= humanized_money_with_symbol trip.price %></th>
+      <td>
+          <%= link_to edit_backoffice_trip_path(trip), class:"btn btn-primary btn-sm" do %>
+          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+          <% end %>
+          <%= link_to (), class:"btn btn-primary btn-sm" do %>
+          <span class="glyphicon glyphicon-screenshot" aria-hidden="true"></span>
+          <% end %>
+      </td>
+      <td>
+        <label> <i class="glyphicon glyphicon-star"></i></label>
+        <label> <i class="glyphicon glyphicon-star"></i></label>
+        <label> <i class="glyphicon glyphicon-star"></i></label>
+        <label> <i class="glyphicon glyphicon-star"></i></label>
+        <label> <i class="glyphicon glyphicon-star-empty"></i></label>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
